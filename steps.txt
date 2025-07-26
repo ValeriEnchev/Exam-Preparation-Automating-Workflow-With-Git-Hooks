@@ -1,0 +1,28 @@
+git init
+npm init -y
+npm install --save-dev prettier
+npm install --save-dev jest
+npx prettier -v
+
+echo "const sum=(a,b)=>{return a + b;};module.exports = sum;" > sum.js
+echo "const sum = require('./sum'); test('adds 1 + 2 to equal 3', () => { expect(sum(1, 2)).toBe(3); });" > sum.test.js
+
+
+npx prettier --check sum.js
+npx prettier --write sum.js
+npx prettier --check sum.test.js
+npx prettier --write sum.test.js
+
+
+echo "node_modules/" > .gitignore
+git config --global core.autocrlf true
+
+ls -la .git/hooks/pre-commit*
+ls -la .git/hooks/pre-push*
+
+chmod +x .git/hooks/pre-commit
+chmod +x .git/hooks/pre-push
+
+git add .
+
+git commit -m "
