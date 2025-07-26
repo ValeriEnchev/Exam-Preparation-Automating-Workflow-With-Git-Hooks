@@ -25,4 +25,7 @@ chmod +x .git/hooks/pre-push
 
 git add .
 
-git commit -m "
+npm run test
+npm run format
+
+git commit -m "Initial"
