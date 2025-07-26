@@ -29,3 +29,6 @@ npm run test
 npm run format
 
 git commit -m "Initial"
+
+
+git remote add origin git@github.com:ValeriEnchev/Exam-Preparation-Automating-Workflow-With-Git-Hooks.git
